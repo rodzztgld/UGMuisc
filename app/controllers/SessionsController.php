@@ -1,5 +1,5 @@
 <?php
-use UG\Forms\Login as LoginForm;
+use UG\Validation\Forms\Login as LoginForm;
 use Laracasts\Validation\FormValidationException;
 
 class SessionsController extends \BaseController {
@@ -33,7 +33,7 @@ class SessionsController extends \BaseController {
 
 	    try
 	    {
-	    	
+
 	        $this->loginForm->validate($input); 
 
 	        $username = Input::get('username');
@@ -54,8 +54,6 @@ class SessionsController extends \BaseController {
 	    }
 
 	}
-
-	
 
 	/**
 	 * Remove the specified resource from storage.

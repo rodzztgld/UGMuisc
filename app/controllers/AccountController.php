@@ -1,6 +1,6 @@
 <?php
 
-use UG\Forms\Register as RegisterForm;
+use UG\Validation\Forms\Register as RegisterForm;
 use Laracasts\Validation\FormValidationException;
 
 class AccountController extends \BaseController {
