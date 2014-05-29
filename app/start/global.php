@@ -67,6 +67,10 @@ App::down(function()
 	return Response::make("Be right back!", 503);
 });
 
+App::error(function(Laracasts\Validation\FormValidationException $exception, $code)
+{
+    return Redirect::back()->withInput()->withErrors($exception->getErrors());
+});
 /*
 |--------------------------------------------------------------------------
 | Require The Filters File
