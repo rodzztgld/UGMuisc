@@ -22,7 +22,6 @@ class AccountController extends \BaseController {
 		return View::make('account.create');
 	}
 
-
 	/**
 	 * Store a newly created resource in storage.
 	 *
@@ -41,8 +40,6 @@ class AccountController extends \BaseController {
 	        Auth::login($user);
 
 	        return Redirect::home();
-
-	        
 	    }
 	    catch (FormValidationException $e)
 	    {
