@@ -14,6 +14,9 @@
 					<input type="password" name="password" placeholder="Password">
 					{{ $errors->first('password') }}
 
+					<input type="checkbox" name="remember" id="remember">
+					<label for="remember">Remember me?</label><br/>
+
 					<input type="submit" value="Login" class="button">
 
 				{{ Form::close() }}
