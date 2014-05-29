@@ -31,27 +31,18 @@ class SessionsController extends \BaseController {
 	{
 		$input = Input::only('username', 'password');
 
-	    try
-	    {
+	    $this->loginForm->validate($input); 
 
-	        $this->loginForm->validate($input); 
+	    $username = Input::get('username');
+		$password = Input::get('password');
+		$remember = Input::has('remember') ? true : false;
 
-	        $username = Input::get('username');
-			$password = Input::get('password');
-			$remember = Input::has('remember') ? true : false;
-
-			if (!Auth::attempt(array('username' => $username, 'password' => $password),$remember))
-			{
-			    return Redirect::route('login')->with('form_error', 'Invalid login credentials!');   
-			}
+		if (!Auth::attempt(array('username' => $username, 'password' => $password),$remember))
+		{
+			return Redirect::route('login')->with('login_error', 'Invalid login credentials!');   
+		}
 			
-			return Redirect::to('/');
-
-	    }
-	    catch (FormValidationException $e)
-	    {
-	        return Redirect::back()->withInput()->withErrors($e->getErrors());
-	    }
+		return Redirect::to('/');
 
 	}
 

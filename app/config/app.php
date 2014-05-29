@@ -119,6 +119,7 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
+		        # THIRD PARTY SERVICE PROVIDERS
 		'Laracasts\Validation\ValidationServiceProvider'
 
 	),

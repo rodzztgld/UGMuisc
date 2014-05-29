@@ -31,20 +31,14 @@ class AccountController extends \BaseController {
 	{
 		$input = Input::only('username','email','password','confirm_password');
 
-	    try
-	    {
-	        $this->registerForm->validate($input);
+	    $this->registerForm->validate($input);
 
-	        $user = User::create($input);
+	    $user = User::create($input);
 
-	        Auth::login($user);
+	    Auth::login($user);
 
-	        return Redirect::home();
-	    }
-	    catch (FormValidationException $e)
-	    {
-	        return Redirect::back()->withInput()->withErrors($e->getErrors());
-	    }
+	    return Redirect::home();
+	    
 	}
 
 	/**

@@ -9,16 +9,16 @@
 				{{ Form::open(['url' => URL::route('register')]) }}
 
 					<input type="text" name="username" placeholder="Username">
-					{{ $errors->first('username') }}
+					{{ errors_for('username', $errors) }}
 
 					<input type="email" name="email" placeholder="Email Address">
-					{{ $errors->first('email') }}
+					{{ errors_for('email', $errors) }}
 
 					<input type="password" name="password" placeholder="Password">
-					{{ $errors->first('password') }}
+					{{ errors_for('password', $errors) }}
 
 					<input type="password" name="confirm_password" placeholder="Confirm Password">
-					{{ $errors->first('confirm_password') }}<br/>
+					{{ errors_for('confirm_password', $errors) }}<br/>
 
 					<input type="submit" value="Register" class="button">
 

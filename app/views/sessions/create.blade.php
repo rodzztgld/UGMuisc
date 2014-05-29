@@ -9,10 +9,14 @@
 				{{ Form::open(['url' => URL::route('login')]) }}
 
 					<input type="text" name="username" placeholder="Username">
-					{{ $errors->first('username') }}
+					{{ errors_for('username', $errors) }}
 
 					<input type="password" name="password" placeholder="Password">
-					{{ $errors->first('password') }}
+					{{ errors_for('password', $errors) }}
+
+					@if (Session::has('login_error'))
+			              <span class="error">{{ Session::get('login_error') }}</span>
+			        @endif
 
 					<input type="checkbox" name="remember" id="remember">
 					<label for="remember">Remember me?</label><br/>
